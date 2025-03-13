@@ -1,36 +1,42 @@
-// Define the initial cats array
+// Define the cats array
 const cats = ["Milo", "Otis", "Garfield"];
 
-// Destructive functions
+// Append a cat (destructive)
 function destructivelyAppendCat(name) {
-  cats.push("Ralph");
+  cats.push(name);
 }
 
+// Prepend a cat (destructive)
 function destructivelyPrependCat(name) {
-  cats.unshift("Bob");
+  cats.unshift(name);
 }
 
+// Remove last cat (destructive)
 function destructivelyRemoveLastCat() {
   cats.pop();
 }
 
+// Remove first cat (destructive)
 function destructivelyRemoveFirstCat() {
   cats.shift();
 }
 
-// Non-destructive functions
+// Append a cat (non-destructive)
 function appendCat(name) {
-  return [...cats, "Bob"]; // Creates a new array with the added cat
+  return [...cats, name]; // New array with added cat
 }
 
+// Prepend a cat (non-destructive)
 function prependCat(name) {
-  return ["Bob", ...cats]; // Creates a new array with the added cat at the beginning
+  return [name, ...cats]; // New array with cat at the start
 }
 
+// Remove last cat (non-destructive)
 function removeLastCat() {
-  return cats.slice(0, -1); // Creates a new array without the last cat
+  return cats.slice(0, -1); // Copy of array without last cat
 }
 
+// Remove first cat (non-destructive)
 function removeFirstCat() {
-  return cats.slice(1); // Creates a new array without the first cat
+  return cats.slice(1); // Copy of array without first cat
 }
